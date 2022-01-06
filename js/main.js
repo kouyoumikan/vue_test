@@ -1,12 +1,18 @@
 const app = Vue.createApp({
     el: "#app",
     data: () => ({
+        newItem: '',
+        todos: [],
         now: "00:00:00"
     }),
     methods: {
         addItem: function() {
             console.log('onClick!')
-            
+
+            let todo = {
+                item: this.newItem
+            }
+            this.todos.push(todo)
         },
         time: function(e) { 
             var date = new Date(); //インスタンスを生成

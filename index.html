@@ -16,9 +16,10 @@
         <!-- 入力フォームとボタン -->
         <form v-on:submit.prevent><!-- submitイベントを無効にする(ページリロード無効) -->
             <input type="text">
-            <button v-on:click="addItem">Add</button>
+            <button v-on:click="addItem" v-model="newItem">Add</button>
         </form>
-        
+        <pre>{{ $data }}</pre><!-- 入力データの確認 -->
+
         <br>
         <button v-on:click="time">現在時刻</button> <!-- 現在時刻の表示 -->
         <p>
