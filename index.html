@@ -18,6 +18,15 @@
             <input type="text" v-model="newItem">
             <button v-on:click="addItem">Add</button>
         </form>
+
+        <ul>
+            <!-- 入力データのリスト表示 -->
+            <li v-for="todo in todos">
+                <span>{{ todo.item }}</span>
+
+            </li>
+        </ul>
+
         <pre>{{ $data }}</pre><!-- 入力データの確認 -->
 
         <br>
