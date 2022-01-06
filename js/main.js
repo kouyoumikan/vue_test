@@ -13,7 +13,8 @@ const app = Vue.createApp({
             if(this.newItem === '') return
 
             let todo = {
-                item: this.newItem
+                item: this.newItem,
+                isDone: false
             }
 
             //入力文字のタスク追加
