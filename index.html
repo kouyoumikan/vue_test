@@ -21,11 +21,13 @@
 
         <ul>
             <!-- 入力データのリスト表示 -->
-            <li v-for="todo in todos">
+            <li v-for="(todo, index) in todos">
                 <input type="checkbox" v-model="todo.isDone">
                 <!-- チェックボックス押下判定 -->
                 <span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
-
+                
+                <!-- タスクの削除ボタン -->
+                <button v-on:click="deleteItem(index)">Delete</button>
             </li>
         </ul>
 
