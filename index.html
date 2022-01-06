@@ -23,7 +23,8 @@
             <!-- 入力データのリスト表示 -->
             <li v-for="todo in todos">
                 <input type="checkbox" v-model="todo.isDone">
-                <span>{{ todo.item }}</span>
+                <!-- チェックボックス押下判定 -->
+                <span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
 
             </li>
         </ul>

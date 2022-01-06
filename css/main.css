@@ -1,3 +1,11 @@
 p {
     color: red;
 }
+
+#app ul { /* リストの黒丸を非表示 */
+    list-style: none;
+}
+
+#app li > span.done { /* チェックボックス押下後、文字上に取り消し線表示 */
+    text-decoration: line-through;
+}
