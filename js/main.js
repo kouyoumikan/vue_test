@@ -9,10 +9,17 @@ const app = Vue.createApp({
         addItem: function() {
             console.log('onClick!')
 
+            //未入力ならタスク追加なし
+            if(this.newItem === '') return
+
             let todo = {
                 item: this.newItem
             }
+
+            //入力文字のタスク追加
             this.todos.push(todo)
+            //入力文字をクリア
+            this.newItem = ''
         },
         time: function(e) { 
             var date = new Date(); //インスタンスを生成
