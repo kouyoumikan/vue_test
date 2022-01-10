@@ -68,6 +68,13 @@
         <!--  単位変換（km と m の値） -->
         <p><input type="text" v-model="km"> km</p>
         <p><input type="text" v-model="m"> m</p>
+
+        <br>
+        <!--  deepオプション（監視プロパティwatchのオプション） -->
+        <ul>
+            <li v-for="color in colors"> {{ color.name }} </li>
+        </ul>
+        <button v-on:click="onClick">Click!</button>
     </div>
     
     <!-- Vue.jsデータのインストール -->

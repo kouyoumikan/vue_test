@@ -13,7 +13,14 @@ const app = Vue.createApp({
 
         // 単位変換（km と m の値）
         km: 0,
-        m: 0
+        m: 0,
+
+        // deepオプション（監視プロパティwatchのオプション）
+        colors: [
+            { name: 'Red' },
+            { name: 'Green '},
+            { name: 'Blue' },
+        ],
 
     }),
     methods: {
@@ -55,7 +62,14 @@ const app = Vue.createApp({
         // 算出プロパティ（キャッシュなし）
         methodsNumber: function() {
             return Math.random()
-        }
+        },
+
+        // deepオプション（監視プロパティwatchのオプション）
+        onClick: function(event) {
+            // ボタン押下後、colorsの指定した値を変更
+            this.colors[1].name = 'White'
+        },
+
     },
 
     computed: { // 算出プロパティ（getterとsetter）
@@ -89,6 +103,16 @@ const app = Vue.createApp({
             console.log(value)
             this.km = value / 1000
             this.m = value 
+        },
+
+        // deepオプション（監視プロパティwatchのオプション）
+        colors: {
+            handler : function(newValue, oldValue) {
+                console.log('new: %s, old: %s', newValue, oldValue)
+                console.log('Update!')
+            },
+            // コンソープを表示できるようにdeepをtrue
+            deep: true
         }
 
     },
