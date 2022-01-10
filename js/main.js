@@ -1,6 +1,6 @@
 const app = Vue.createApp({
     el: "#app",
-    data: () => ({
+    data: () => ({ // データの初期値
         newItem: '',
         todos: [],
         now: "00:00:00",
@@ -9,7 +9,12 @@ const app = Vue.createApp({
         basePrice: 100,
 
         // 監視プロパティ
-        message: 'Hello!'
+        message: 'Hello!',
+
+        // 単位変換（km と m の値）
+        km: 0,
+        m: 0
+
     }),
     methods: {
         addItem: function() { //タスクアイテム
@@ -72,7 +77,20 @@ const app = Vue.createApp({
     watch : { // 監視プロパティ（監視データ変更時はコンソールにnew値とold値を表示する処理）
         message: function(newValue, oldValue) {
             console.log('new: %s, old: %s', newValue, oldValue)
+        },
+
+        // 単位変換（km と m の値）
+        km:function(value) {
+            console.log(value)
+            this.km = value
+            this.m = value * 1000
+        },
+        m:function(value) {
+            console.log(value)
+            this.km = value / 1000
+            this.m = value 
         }
+
     },
 });
 app.mount('#app')
