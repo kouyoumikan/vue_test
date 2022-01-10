@@ -3,7 +3,8 @@ const app = Vue.createApp({
     data: () => ({
         newItem: '',
         todos: [],
-        now: "00:00:00"
+        now: "00:00:00",
+        basePrice: 100
     }),
     methods: {
         addItem: function() { //タスクアイテム
@@ -39,7 +40,17 @@ const app = Vue.createApp({
             // this.now = date.getHours() + ":"
             // + date.getMinutes() + ":" +
             // date.getSeconds();
-          }
+        },
+    },
+    computed: { // 算出プロパティ（getterとsetter）
+        taxIncludedPrice : {
+            get: function() {
+                return this.basePrice * 1.1
+            },
+            set: function() {
+                this.basePrice = value / 1.1
+            }
+        }
     }
 });
 app.mount('#app')
