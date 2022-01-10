@@ -4,7 +4,12 @@ const app = Vue.createApp({
         newItem: '',
         todos: [],
         now: "00:00:00",
-        basePrice: 100
+
+        // 算出プロパティ
+        basePrice: 100,
+
+        // 監視プロパティ
+        message: 'Hello!'
     }),
     methods: {
         addItem: function() { //タスクアイテム
@@ -47,6 +52,7 @@ const app = Vue.createApp({
             return Math.random()
         }
     },
+
     computed: { // 算出プロパティ（getterとsetter）
         taxIncludedPrice : {
             get: function() {
@@ -61,6 +67,12 @@ const app = Vue.createApp({
         computedNumber: function() {
             return Math.random()
         }
-    }
+    },
+
+    watch : { // 監視プロパティ（監視データ変更時はコンソールにnew値とold値を表示する処理）
+        message: function(newValue, oldValue) {
+            console.log('new: %s, old: %s', newValue, oldValue)
+        }
+    },
 });
 app.mount('#app')
