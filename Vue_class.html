@@ -11,7 +11,12 @@
 <body>
     <!-- Vue.jsでのクラスのデータバインディング -->
     <div id="app">
-        
+        <p>
+            Hello <span v-bind:class="{ large: isLarge, 'text-danger': hasError }">Vue.js!</span>
+        </p>
+        <p>
+            Hello <span :class="{ large: isLarge }">Vue.js!</span>
+        </p>
     </div>
 
     <!-- Vue.jsデータのインストール -->

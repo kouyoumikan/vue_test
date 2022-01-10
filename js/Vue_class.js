@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     el: '#app',
     data: () => ({ // データの初期値
-        
+        isLarge: true, // spanクラスの文字サイズを大きくするか判定
+        hasError: true, // 文字色を変更するか判定
 
     }),
 
