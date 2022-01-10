@@ -43,6 +43,21 @@
         <!-- 算出プロパティ（getterとsetter） -->
         <p>base price(本体価格): <input type="text" v-model="basePrice"></p>
         <p>base price(税込価格): <input type="text" v-model="taxIncludedPrice"></p>
+
+        <br>
+        <!-- 算出プロパティ（キャッシュ有りとキャッシュなし） -->
+        <h2>computed（キャッシュ有り）</h2>
+        <ol>
+            <li>{{ computedNumber }}</li>
+            <li>{{ computedNumber }}</li>
+            <li>{{ computedNumber }}</li>
+        </ol>
+        <h2>methods（キャッシュなし）</h2>
+        <ol>
+            <li>{{ methodsNumber() }}</li>
+            <li>{{ methodsNumber() }}</li>
+            <li>{{ methodsNumber() }}</li>
+        </ol>
     </div>
     
     <!-- Vue.jsデータのインストール -->

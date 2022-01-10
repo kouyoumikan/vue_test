@@ -41,6 +41,11 @@ const app = Vue.createApp({
             // + date.getMinutes() + ":" +
             // date.getSeconds();
         },
+
+        // 算出プロパティ（キャッシュなし）
+        methodsNumber: function() {
+            return Math.random()
+        }
     },
     computed: { // 算出プロパティ（getterとsetter）
         taxIncludedPrice : {
@@ -50,6 +55,11 @@ const app = Vue.createApp({
             set: function() {
                 this.basePrice = value / 1.1
             }
+        },
+
+        // 算出プロパティ（キャッシュ有り）
+        computedNumber: function() {
+            return Math.random()
         }
     }
 });
