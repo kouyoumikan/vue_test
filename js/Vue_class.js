@@ -4,6 +4,10 @@ const app = Vue.createApp({
         isLarge: true, // spanクラスの文字サイズを大きくするか判定
         hasError: true, // 文字色を変更するか判定
 
+        // 配列構文によるクラスとスタイルの共存データバインディング
+        largeClass: 'large',
+        dangerClass: 'text-danger',
+
     }),
 
     watch : { // 監視プロパティ（監視データ変更時はコンソールにnew値とold値を表示する処理）

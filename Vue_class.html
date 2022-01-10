@@ -18,6 +18,15 @@
         <p>Hello 
             <span :class="{ large: isLarge, 'text-danger': hasError }">Vue.js!</span>
         </p>
+
+        <br>
+        <!-- 配列構文によるクラスとスタイルの共存データバインディング -->
+        <p>Hello 
+            <span :class="largeClass">Vue.js!</span>
+        </p>
+        <p>Hello 
+            <span :class="[largeClass, dangerClass]">Vue.js!</span>
+        </p>
     </div>
 
     <!-- Vue.jsデータのインストール -->
