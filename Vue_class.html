@@ -34,6 +34,15 @@
             <span :class="classObject">Vue.js!</span>
         </p>
 
+        <br>
+        <!-- クラスの条件に三項演算子を使用した処理 -->
+        <p>Hello 
+            <span v-bind:class="isLarge ? largeClass2: ''">Vue.js!</span>
+        </p>
+        <p>Hello 
+            <span v-bind:class="[isLarge ? largeClass2: '', dangerClass ]">Vue.js!</span>
+        </p>
+
     </div>
 
     <!-- Vue.jsデータのインストール -->

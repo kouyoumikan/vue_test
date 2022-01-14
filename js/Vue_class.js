@@ -8,6 +8,15 @@ const app = Vue.createApp({
         largeClass: 'large',
         dangerClass: 'text-danger',
 
+        // クラスの条件に三項演算子を使用した処理
+        largeClass2: {
+            'large': true,
+            'bg-gray': true
+        },
+        dangerClass2: {
+            'text-danger': true
+        },
+
         // オブジェクトデータを利用
         classObject: {
             large: true,
